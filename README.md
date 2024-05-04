@@ -2,5 +2,5 @@
 
 * `go install golang.org/x/tools/gopls@latest`
 * `nvim --clean -u init test.go`
-* `./repro.sh` (in a separate shell)
+* `:!echo " package test" > test.go`
 * `:lua vim.lsp.buf.format()`
