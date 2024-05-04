@@ -4,5 +4,5 @@ vim.cmd.packadd("nvim-lspconfig")
 
 local lspconfig = require("lspconfig")
 
-lspconfig.tsserver.setup({})
-lspconfig.eslint.setup({})
+lspconfig.gopls.setup({})
+lspconfig.gopls2.setup({})

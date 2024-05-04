@@ -10,7 +10,7 @@ pid=$(pgrep -n -f "nvim --embed")
 kill -s STOP $pid
 
 # Update the file
-echo " console.log('test')" > test.js
+echo " package test" > main.go
 
 # Resume the process
 kill -s CONT $pid
