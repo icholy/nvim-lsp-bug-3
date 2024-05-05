@@ -4,3 +4,4 @@
 * `nvim --clean -u init test.go`
 * `:!echo " package test" > test.go`
 * `:lua vim.lsp.buf.format()`
+* `:lua vim.lsp.buf.format()`
