@@ -1,16 +1,14 @@
-vim.o.packpath = ".";
-
-vim.cmd.packadd("nvim-lspconfig")
-
-local lspconfig = require("lspconfig")
-
-lspconfig.gopls.setup({})
-
--- we don't want this LSP to do anything, but we need 2 attached
--- for the bug to trigger
-lspconfig.gopls2.setup({
-	capabilities = {},
-	on_attach = function (client)
-		client.server_capabilities = {}
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "go" },
+	callback = function()
+		local bufnr = vim.api.nvim_get_current_buf()
+		vim.lsp.buf_attach_client(bufnr, vim.lsp.start_client({
+			name = "gopls",
+			cmd = { "gopls", "serve" },
+		}))
+		vim.lsp.buf_attach_client(bufnr, vim.lsp.start_client({
+			name = "dummy",
+			cmd = { "dummylsp" },
+		}))
 	end
 })
