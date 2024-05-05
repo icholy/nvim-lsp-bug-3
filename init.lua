@@ -1,3 +1,4 @@
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "go" },
 	callback = function()
@@ -10,5 +11,6 @@ vim.api.nvim_create_autocmd("FileType", {
 			name = "dummy",
 			cmd = { "dummylsp" },
 		}))
+		return true
 	end
 })
