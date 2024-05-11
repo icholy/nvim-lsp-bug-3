@@ -1,3 +1,5 @@
+vim.lsp.set_log_level('debug')
+
 local gopls = vim.lsp.start_client({ name = "gopls", cmd = { "gopls", "serve" } })
 local dummy = vim.lsp.start_client({ name = "dummy", cmd = { "dummylsp" } })
 
